@@ -109,8 +109,9 @@ li {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: stretch;
+    justify-content: center;
     margin: 1vw;
-    gap: 1%;
+    gap: 5%;
 }
 
 .button {
