@@ -1,3 +1,5 @@
+/* Ik begin met algemene regels waar de stijl van de website zich aan houdt*/
+
 body {
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -6,9 +8,38 @@ body {
     background-color: aliceblue;
 }
 
+section {
+    margin-bottom: 1%;
+}
+
 li {
     padding: 1.2%;
     margin: 5mm;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap:2vw   
+}
+
+h1, h2 {
+    text-transform: capitalize;
+}
+
+a:focus {
+    border: 0.1vw solid blue;
+    color: azure;
+    background-color: blue;
 }
 
 footer {
@@ -29,13 +60,6 @@ footer {
 
 footer li {
     padding: 0;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 header nav {
@@ -80,6 +104,17 @@ header nav img {
     width: 75px;    
 }
 
+header nav a:hover {
+    background:plum
+}
+
+/* Deze code laat het logo bewegen */
+header img:hover {
+    animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-iteration-count:inherit;
+}
+
 main {
     padding-top: 10vh;
     padding-bottom: 2vh;
@@ -93,15 +128,22 @@ a:hover {
     cursor:pointer
 }
 
-
-
-section {
-    margin-bottom: 1%;
+.button {
+    display: block;
+    margin: 20px;
+    width: 30%;
+    padding: 1vw;
+    background-color: aqua;
+    border-radius: 0.1vw;
+    text-decoration: none;
+    transition: all 450ms ease;
 }
 
-h1, h2 {
-    text-transform: capitalize;
+.button:hover {
+    background:chartreuse
 }
+
+/* Tot zover de algemene regels, hieronder staat CSS wat afwijkt van de algemene regels.*/
 
 #intro {
     padding: 0.5mm;
@@ -112,6 +154,7 @@ h1, h2 {
     margin-left: -5mm;
     margin-right: -5%;
 }
+ /* #intro had niet gehoeven, omdat .onstaansverhaal hetzelfde zal bereiken. Graag laat ik zien dat ik de stof beheers. */
 
 .ontstaansverhaal {
     padding: 0.5mm;
@@ -130,10 +173,26 @@ h1, h2 {
     position:relative;
 }
 
+.afleveringenbutton {
+    position: relative;
+    left: 5em;
+    top: -5em;
 
+    background-color: rgba(33, 140, 255, 0.7);
+    color: white;
+    padding: 10px;
+    border: 1px black;
+    border-radius: 3%;
+    text-decoration: none;
 
+    transition: all 450ms ease; 
+}
 
-.hosts {
+.afleveringenbutton:hover {
+    background-color:rgba(21, 116, 211, 1)    
+}
+
+.hostinhoud {
     width: 350px;
     padding: 5px;
     background-color: lightblue;
@@ -142,13 +201,13 @@ h1, h2 {
 
 }
 
-.hosts img {
+.hostinhoud img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.hostcollum {
+.hostrow {
     display: flex;
 
     flex-direction: row;
@@ -160,39 +219,12 @@ h1, h2 {
     
 }
 
-.button {
-    display: block;
-    margin: 20px;
-    width: 30%;
-    padding: 1vw;
-    background-color: aqua;
-    border-radius: 0.1vw;
-    text-decoration: none;
-    transition: all 450ms ease;
-}
-
-.button:hover {
-    background:chartreuse
-}
-
-nav a:hover {
-    background:plum
-}
-
-a:focus {
-    border: 0.1vw solid blue;
-    color: azure;
-    background-color: blue;
-}
-
 .afleveringen {
     display: flex;
     flex-direction:column;
     flex-wrap: wrap;
     justify-content: stretch;
 }
-
-
 
 .afleveringen img {
     width: 20vh
@@ -210,40 +242,29 @@ a:focus {
     font-size: 15px;
 }
 
-ul li {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: left;
-    gap:2vw   
-}
-
-.homefoto {
-    position: relative;
-    left: 5em;
-    top: -5em;
-
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-    border: 1px black;
-    border-radius: 3%;
-    text-decoration: none;
-
-
-    transition: all 450ms ease;
-}
-
-.homefoto:hover {
-    background-color:rgba(255, 255, 255, 1)
+.contact {
+    Display:flex;
+    flex-direction:column;
 }
 
 @keyframes rotate {
     0% {
-        left: top
+        transform:rotate(0deg)
     }
-}
 
-.contact{
-    Display:flex;
-    flex-direction:column;
+    25% {
+        transform: rotate(45deg);
+    }
+
+    50% {
+        transform: rotate(-30deg);
+    }
+
+    75% {
+        transform:rotate(15deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
+    }
 }
