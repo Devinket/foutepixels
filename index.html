@@ -1,96 +1,281 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foute Pixels</title>
-    <link href="style.css" rel="stylesheet">
-</head>
+/* Ik begin met algemene regels waar de stijl van de website zich aan houdt*/
 
-<body>
+body {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin: 5mm;
+    background-color: aliceblue;
+}
+
+section {
+    margin-bottom: 1%;
+}
+
+li {
+    padding: 1.2%;
+    margin: 5mm;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap:2vw   
+}
+
+h1, h2 {
+    text-transform: capitalize;
+}
+
+a:focus {
+    border: 0.1vw solid blue;
+    color: azure;
+    background-color: blue;
+}
+
+footer {
+    display: flex;
+    background-color:rgb(53, 53, 53);
+    color: white;
+    
+    margin-left: -3vw;
+    margin-right: -3vw;
+    margin-bottom: -vh;
+    
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    column-gap: 2px;
+    gap: 5%;
+}
+
+footer li {
+    padding: 0;
+}
+
+header nav {
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: dodgerblue;
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin:-5mm;
+}
+
+header nav ul li {
+    padding: 0;
+    margin-right: 20px;
+}
+
+header nav ul li:last-child {
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+header nav a {
+    padding: 1vw;
+    background-color: gold;
+    text-decoration: none;
+}
+
+header nav img {
+    width: 75px;    
+}
+
+header nav a:hover {
+    background:plum
+}
+
+/* Deze code laat het logo bewegen */
+header img:hover {
+    animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-iteration-count:inherit;
+}
+
+main {
+    padding-top: 10vh;
+    padding-bottom: 2vh;
+}
+
+p:hover {
+    cursor:text;
+}
+
+a:hover {
+    cursor:pointer
+}
+
+.button {
+    display: block;
+    margin: 20px;
+    width: 30%;
+    padding: 1vw;
+    background-color: aqua;
+    border-radius: 0.1vw;
+    text-decoration: none;
+    transition: all 450ms ease;
+}
+
+.button:hover {
+    background:chartreuse
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
+    border: 0;
+}
+
+/* Tot zover de algemene regels, hieronder staat CSS wat afwijkt van de algemene regels.*/
+
+#intro {
+    padding: 0.5mm;
+    padding-left: 2%;
+    padding-right: 5%;
+    background-color: rgb(21, 116, 211);
+    color: rgb(235, 235, 235);
+    margin-left: -5mm;
+    margin-right: -5%;
+}
+ /* #intro had niet gehoeven, omdat .onstaansverhaal hetzelfde zal bereiken. Graag laat ik zien dat ik de stof beheers. */
+
+.ontstaansverhaal {
+    padding: 0.5mm;
+    padding-left: 2%;
+    padding-right: 5%;
+    background-color: rgb(21, 116, 211);
+    color: rgb(235, 235, 235);
+    margin-left: -5mm;
+    margin-right: -5%;
+}
+
+.banner {
+    display: block;
+    width: 105%;
+    margin-left: -2%;
+    position:relative;
+}
+
+.afleveringenbutton {
+    position: relative;
+    left: 5em;
+    top: -5em;
+
+    background-color: rgba(33, 140, 255, 0.7);
+    color: white;
+    padding: 10px;
+    border: 1px black;
+    border-radius: 3%;
+    text-decoration: none;
+
+    transition: all 450ms ease; 
+}
+
+.afleveringenbutton:hover {
+    background-color:rgba(21, 116, 211, 1)    
+}
+
+.hostinhoud {
+    width: 350px;
+    padding: 5px;
+    background-color: lightblue;
+    border: 0.2vw solid black;
+    border-radius: 5%;
+
+}
+
+.hostinhoud img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hostrow {
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    justify-content: center;
+    margin: 1vw;
+    gap: 2%;
+    
+}
+
+.afleveringen {
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: stretch;
+}
+
+.afleveringen img {
+    width: 20vh
+}
+
+.afleveringen li {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.afleveringen li h2 {
+    font-size: 1em;
+}
+
+.afleveringen li h3 {
+    font-size: 1.3em;
+}
 
 
-<header>
-    <nav> 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="over_ons.html">Over ons!</a></li>
-            <li><a href="afleveringen.html">Afleveringen</a></li>
-            <li><img src="images/logo.png" alt="logo"></li>
-        </ul>
+.contact {
+    Display:flex;
+    flex-direction:column;
+}
 
-    </nav>
-</header>
+@keyframes rotate {
+    0% {
+        transform:rotate(0deg)
+    }
 
-<main>
-    <img class="banner" src="images/audiolab.jpg" alt="foto van audiolab">
-        <!-- "bron: https://images.app.goo.gl/Abt9twac8mMnWYQY8"* -->
-    <a class="afleveringenbutton" href="afleveringen.html">Luister de nieuwste aflevering!</a>
+    25% {
+        transform: rotate(45deg);
+    }
 
-    <section id="intro">
-        <h1>Onze podcast</h1>
-        <p>Hoe herken je een catfish? Waarom zeggen mensen gemenere dingen op het internet? Wat kan ik doen om niet gescamd te worden? Dit zijn allemaal vragen waar wij (Devin, Sarah en Nienke) antwoord op gaan geven. Wekelijks bespreken we steeds een verschillende onderwerp om je bewust te maken van de gevaren, zodat jij de volgende keer een verdacht mailtje kan herkennen of hoe je omgaat met cyberpesten.
-            Pak een kop koffie (of energiedrank), en luister mee terwijl we het wereldwijde web een beetje veiliger proberen te maken!</p>
-    </section>
+    50% {
+        transform: rotate(-30deg);
+    }
 
-    <section>
-        <h2>Afleveringen</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/As7Sm_K50gc?si=SrSqMFRPPc7XpegJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <!--Deze code is gekopieerd vanuit youtube, dit is een embed code.-->
-        <a class="button" href="afleveringen.html">Luister podcast</a>
-    </section>
+    75% {
+        transform:rotate(15deg)
+    }
 
-    <article>
-        <h2>Sprekers</h2>
-        <section class="hostrow">
-            <section class="hostinhoud">
-                <img src="images/nienke.jpeg" alt="foto van Nienke">
-                <h3>Nienke Smit</h3>
-            </section>
-
-            <section class="hostinhoud">
-                <img src="images/sarah.jpeg" alt="foto van Sarah">
-                <h3>Sarah Pole</h3>
-            </section>
-
-            <section class="hostinhoud">
-                <img src="images/devin.jpeg" alt="foto van Devin">
-                <h3>Devin van de Ketterij</h3>
-            </section>
-        </section>
-            <a class='button' href="over_ons.html">Meer over ons</a>
-    </article>
-</main>
-
-<footer>
-    <section>
-        <h2>Metadata</h2>
-        <ul>
-            <li><p>Ivo Nijhuis</p></li>
-            <li><p>Internetstandaarden</p></li>
-            <li><p>Magenta, Violet</p></li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Studenten</h2>
-        <ul>
-            <li><p>Nienke Smit</p></li>
-            <li><p>Sarah Pole</p></li>
-            <li><p>Devin van de Ketterij</p></li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Opleiding CMD</h2>
-        <ul>
-            <li><p>Wibautstraat 2-4 1091 GM Amsterdam</p></li>
-            <li><p>020 595 18555</p></li>
-            <li><p>info-cmd@hva.nl</p></li>
-            <li><p>Volg ons Like ons @cmdamsterdam</p></li>
-        </ul>
-    </section>
-</footer>
-
-</body>
-</html>
+    100% {
+        transform: rotate(0deg)
+    }
+}
