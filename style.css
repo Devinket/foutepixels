@@ -143,6 +143,12 @@ a:hover {
     background:chartreuse
 }
 
+iframe {
+    width: 560px;
+    height: 315px;
+    border: 0;
+}
+
 /* Tot zover de algemene regels, hieronder staat CSS wat afwijkt van de algemene regels.*/
 
 #intro {
@@ -238,9 +244,14 @@ a:hover {
     background-color: lightgray;
 }
 
-.afleveringen li h1 {
-    font-size: 15px;
+.afleveringen li h2 {
+    font-size: 1em;
 }
+
+.afleveringen li h3 {
+    font-size: 1.3em;
+}
+
 
 .contact {
     Display:flex;
